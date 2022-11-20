@@ -1,6 +1,6 @@
 const oneDay = 24 * 60 * 60 * 1000;
 const today = new Date();
-const firstDate = new Date('2022-8-16');
+const firstDate = new Date('2022-8-16'.replace(/-/g, "/"));
 const lovingDays = Math.round(Math.abs((today - firstDate) / oneDay));
 $("#lovingDays").append(lovingDays);
 
