@@ -61,6 +61,7 @@ body {
 
   background-attachment: scroll;
   background-size: 100% 100%;
+  padding-top: 600px;
 }
 
 /* heart image: https://stackoverflow.com/a/51216413 */
