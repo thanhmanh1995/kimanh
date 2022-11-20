@@ -46,7 +46,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("https://thanhmanh1995.github.io/kimanh/sky.png") !important;
+  background-image: url("../sky.jpeg") !important;
   background-repeat: no-repeat;
   background-size: cover;
 
