@@ -1,5 +1,10 @@
+const oneDay = 24 * 60 * 60 * 1000;
+const today = new Date();
+const firstDate = new Date('2022-8-16');
+const lovingDays = Math.round(Math.abs((today - firstDate) / oneDay));
+$("#lovingDays").append(lovingDays);
+
 let particles = [];
-let microparticles = [];
 
 const c1 = createCanvas({
   width: $(window).width(),
@@ -33,12 +38,6 @@ class Particle1 {
 
     this.ID = setInterval(
       function() {
-        microparticles.push(
-          new microParticle(c1.context, {
-            x: this.x,
-            y: this.y,
-          })
-        );
       }.bind(this),
       this.random * 20
     );
@@ -86,50 +85,7 @@ class Particle1 {
   }
 }
 
-class microParticle {
-  constructor(canvas, options) {
-    this.random = Math.random();
-    this.random1 = Math.random();
-    this.random2 = Math.random();
-    this.progress = 0;
-    this.canvas = canvas;
 
-    this.x = options.x;
-    this.y = options.y;
-    this.s = 2 + Math.random() * 3;
-    this.w = $(window).width();
-    this.h = $(window).height();
-    this.radius = 1 + this.random * 0.5;
-    this.color = "#4EFCFE"; //this.random > .5 ? "#a9722c" : "#FFFED7"
-  }
-
-  render() {
-    this.canvas.beginPath();
-    this.canvas.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-    this.canvas.lineWidth = 2;
-    this.canvas.fillStyle = this.color;
-    this.canvas.fill();
-    this.canvas.closePath();
-  }
-
-  move() {
-    this.x -=
-      Math.sin(this.progress / (100 / (this.random1 - this.random2 * 10))) *
-      this.s;
-    this.y += Math.cos(this.progress / this.h) * this.s;
-
-    if (this.x < 0 || this.x > this.w - this.radius) {
-      return false;
-    }
-
-    if (this.y > this.h) {
-      return false;
-    }
-    this.render();
-    this.progress++;
-    return true;
-  }
-}
 
 var random_life = 1000;
 
@@ -150,8 +106,6 @@ function clear() {
     tela.height / 2,
     tela.width
   );
-  grd.addColorStop(0, "rgba(20,20,20,1)");
-  grd.addColorStop(1, "rgba(0,0,0,0)");
   // Fill with gradient
   canvas.globalAlpha = 0.16;
   canvas.fillStyle = grd;
@@ -168,9 +122,6 @@ function update() {
   clear();
   particles = particles.filter(function(p) {
     return p.move();
-  });
-  microparticles = microparticles.filter(function(mp) {
-    return mp.move();
   });
   requestAnimationFrame(update.bind(this));
 }
