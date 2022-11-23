@@ -1,7 +1,7 @@
 const oneDay = 24 * 60 * 60 * 1000;
 const today = new Date();
-const firstDate = new Date('2022-8-16'.replace(/-/g, "/"));
-const lovingDays = Math.floor(Math.abs((today - firstDate) / oneDay));
+const firstDate = new Date('2022-8-16 21:30:00'.replace(/-/g, "/"));
+const lovingDays = Math.floor(Math.abs((today - firstDate) / oneDay)) + 1;
 $("#lovingDays").append(lovingDays);
 
 let particles = [];

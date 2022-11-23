@@ -2,7 +2,7 @@
   z-index: 9999 !important;
   position: absolute;
   left: 50%;
-  top: 22%;
+  top: 20%;
   transform: translateX(-50%) translateY(-50%);
   font-family: "Montserrat";
   text-align: center;
@@ -19,7 +19,7 @@ canvas {
 .img {
   position: absolute;
   left: 50%;
-  top: 52%;
+  top: 51%;
   transform: translate(-50%, -50%);
   width: 420px;
   height: 420px;
@@ -65,7 +65,7 @@ body {
 }
 
 /* heart image: https://stackoverflow.com/a/51216413 */
-img {
+.img {
 
   /* width: 200px; */
   aspect-ratio: 1;
@@ -80,16 +80,25 @@ img {
   z-index: 999;
   font-size: 60px;
   color: #FE009F;
-  padding-top: 300px;
+  padding-top: 250px;
   text-align: center;
   font-family: 'Love Light', cursive;
+  padding-bottom: 30px;
 }
 
 .loving {
   z-index: 999;
   font-size: 100px;
   color: red;
-  padding-top: 40px;
+  padding-top: 20px;
   text-align: center;
   font-family: 'Love Light', cursive;
+}
+
+.avatar {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  margin-left: 40px;
+  border-radius: 50%;
 }
