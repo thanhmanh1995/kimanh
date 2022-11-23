@@ -59,3 +59,7 @@ function createCanvas(properties) {
 }
 
 update();
+
+if(! (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ) {
+  $("body").html("<h1>Hãy mở trên điện thoại !!!</h1>");
+}
